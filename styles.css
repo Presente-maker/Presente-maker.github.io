@@ -1,48 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;600&display=swap');
 
-
+:root {
+    --primary-color: #8a2be2;
+    --secondary-color: #b474f1;
+    --accent-color: #ff6b6b;
+    --light-color: #f8f0ff;
+    --dark-color: #4b0082;
+    --text-color: #333;
+    --disabled-color: #d9c4ff;
+}
 
 body {
     font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--light-color), var(--secondary-color));
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #b474f1 0%, #8a2be2 100%);
-
 }
 
+/* Melhore o slider */
 .slider {
     width: 90%;
     max-width: 800px;
-    margin: 20px auto;
-    background: #c393f0;
-    /* Fundo branco para as bordas */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.slider img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    padding: 10px;
+    background: white;
 }
 
 .book.special-day .cover {
     background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%);
     box-shadow: 0 4px 15px rgba(255, 154, 158, 0.6);
-}
-
-.slider img {
-    width: auto;
-    max-width: 100%;
-    height: 400px;
-    margin: 0 auto;
-    display: block;
-    object-fit: contain;
-    /* Alterado de 'cover' para 'contain' */
-    background: #b474f1;
-    /* Fundo branco para as bordas */
-    padding: 10px;
-    /* Espaçamento interno */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Remover os pontinhos do slider */
@@ -294,4 +296,29 @@ body {
 .heart-button svg {
     animation: heartbeat 1.5s infinite;
     fill: #ff6b6b;
+}
+
+
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#pause-play-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#pause-play-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
 }

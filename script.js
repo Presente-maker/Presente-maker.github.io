@@ -4,7 +4,7 @@ const mensagens = [
     //2
     "Meu amor, hoje quero te dizer o quanto você ilumina meus dias. Desde que você entrou na minha vida, tudo ganhou mais cor, mais significado. Seu sorriso é meu conforto, seu abraço é meu refúgio, e seu amor é a força que me move.Você não imagina o bem que me faz só por existir. Sua voz acalma meus medos, sua risada contagia minha alma, e sua presença transforma até os dias mais cinzas em algo especial. É como se o universo tivesse me dado um presente que eu nem sabia que precisava, mas que agora não consigo mais viver sem. Eu te amo não só pelo que você é, mas pelo que eu me torno quando estou com você.",
     //3
-    "Que o dia 3 seja incrível! 🌟",
+    "Minha princesa, hoje quero te dizer que ter você é o maior presente que a vida me deu. Cada instante ao seu lado é como uma página de um conto perfeito, e o melhor é pensar que essa história está só começando. Eu amo o jeito que você me olha, como se eu fosse seu mundo inteiro. Amo nossos planos bobos, nossos sonhos e até os silêncios que a gente compartilha, porque tudo com você faz sentido. Quero acordar com você todos os dias, ver seu sorriso antes mesmo do café, construir uma vida cheia de memórias e conquistas juntos. Quero envelhecer ao seu lado e, mesmo daqui a 50 anos, ainda te olhar com o mesmo amor e admiração de hoje. Eu te amo hoje, amanhã e em todos os capítulos que ainda vamos escrever. ",
     //4
     "Que o dia 4 seja incrível! 🌟",
     //5
@@ -62,6 +62,18 @@ const mensagens = [
 ];
 
 mensagens[26] = "❤️ Mensagem SUPER especial para o dia 27/04! ❤️";
+
+const musicas = [
+    //1
+    "music/musica1.mp3",
+    //2
+    "music/musica2.mp3",
+    //3
+    "music/musica3.mp3",
+    // ... continue para todas as 30 cartas
+    //30
+    "music/musica30.mp3"
+];
 
 // Variável para controlar o evento de clique fora
 let outsideClickHandler = null;
@@ -213,6 +225,9 @@ $(document).ready(function () {
                 text.innerText = this.classList.contains('open')
                     ? text.dataset.message
                     : `Cartinha ${i}`;
+                    if (this.classList.contains('open')) {
+                        playMusic(musicas[i - 1]);
+                    }
             }
         });
 
@@ -221,7 +236,8 @@ $(document).ready(function () {
             if (heartButton) {
                 heartButton.addEventListener('click', function (e) {
                     e.stopPropagation();
-                    text.innerText = text.dataset.message; // Mostra a mensagem especial
+                    text.innerText = text.dataset.message;
+                    playMusic(musicas[i - 1]); // Toca a música especial
                 });
             }
         }
@@ -245,5 +261,79 @@ function convertImageToBase64(url, callback) {
     };
     xhr.send();
 }
+
+
+let currentAudio = null;
+
+function playMusic(musicPath) {
+    // Para a música atual se estiver tocando
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+    
+    // Toca a nova música
+    currentAudio = new Audio(musicPath);
+    currentAudio.volume = 0.05; // 30% do volume (ajuste este valor entre 0 e 1)
+    currentAudio.play().catch(e => console.log("Erro ao tocar música:", e));
+}
+
+// Variável para controlar o estado da música
+let isMusicPlaying = false;
+
+// Elementos do controle
+const pausePlayBtn = document.getElementById('pause-play-btn');
+
+// Função para atualizar o ícone do botão
+function updateButtonIcon() {
+    if (currentAudio && !currentAudio.paused) {
+        pausePlayBtn.textContent = "⏸️";
+        isMusicPlaying = true;
+    } else {
+        pausePlayBtn.textContent = "▶️";
+        isMusicPlaying = false;
+    }
+}
+
+// Evento de clique no botão
+pausePlayBtn.addEventListener('click', function() {
+    if (currentAudio) {
+        if (isMusicPlaying) {
+            currentAudio.pause();
+        } else {
+            currentAudio.play().catch(e => console.log("Erro ao tocar música:", e));
+        }
+        updateButtonIcon();
+    }
+});
+
+// Atualize a função playMusic para incluir o controle
+function playMusic(musicPath) {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+    currentAudio = new Audio(musicPath);
+    currentAudio.volume = 0.3; // Volume padrão
+    currentAudio.play().catch(e => console.log("Erro ao tocar música:", e));
+    
+    // Atualiza o botão quando a música começa
+    currentAudio.onplay = function() {
+        updateButtonIcon();
+    };
+    
+    // Atualiza o botão quando a música termina
+    currentAudio.onended = function() {
+        updateButtonIcon();
+    };
+    
+    // Atualiza o botão se ocorrer um erro
+    currentAudio.onerror = function() {
+        updateButtonIcon();
+    };
+}
+
+// Inicializa o botão como pausado no carregamento
+updateButtonIcon();
 
 

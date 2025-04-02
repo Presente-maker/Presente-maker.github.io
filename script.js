@@ -157,13 +157,14 @@ $(document).ready(function () {
 
     // Restante do seu código para as cartinhas
     const today = new Date();
-    const startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    // Definimos um ano fixo (pode ser o ano atual) e o mês de abril (3, pois janeiro é 0)
+    const startDate = new Date(today.getFullYear(), 3, 1); // 1 de abril do ano atual
 
     const cardsContainer = document.getElementById("cards-container");
 
     for (let i = 1; i <= 30; i++) {
         const releaseDate = new Date(startDate);
-        releaseDate.setDate(startDate.getDate() + i - 1);
+        releaseDate.setDate(startDate.getDate() + i - 1); // Dias de abril (1 a 30)
 
         const bookDiv = document.createElement("div");
         bookDiv.classList.add("book");
@@ -176,26 +177,24 @@ $(document).ready(function () {
         coverDiv.classList.add("cover");
 
         // Verifica se é o dia 27/04
-        const isSpecialDay = releaseDate.getDate() === 27 && releaseDate.getMonth() === 3;
+        const isSpecialDay = i === 27; // Dia 27 é sempre especial
 
         if (today < releaseDate) {
             coverDiv.classList.add("disabled");
-            coverDiv.innerHTML = `<p>Disponível em ${releaseDate.toLocaleDateString()}</p>`;
+            coverDiv.innerHTML = `<p>Disponível em ${releaseDate.getDate()}/04/${releaseDate.getFullYear()}</p>`;
         } else {
             coverDiv.innerHTML = isSpecialDay
-    ? `<div class="special-content">
-         <p>Clique para revelar</p>
-         <button class="heart-button">
-             <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                 <path d="M0 0H24V24H0z" fill="none"></path>
-                 <path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path>
-             </svg>
-         </button>
-       </div>`
-    : `<p>Clique para revelar</p>`;
+                ? `<div class="special-content">
+                     <p>Clique para revelar</p>
+                     <button class="heart-button">
+                         <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                             <path d="M0 0H24V24H0z" fill="none"></path>
+                             <path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path>
+                         </svg>
+                     </button>
+                   </div>`
+                : `<p>Clique para revelar</p>`;
         }
-
-
 
         coverDiv.addEventListener("click", function () {
             if (today < releaseDate) {
@@ -208,7 +207,7 @@ $(document).ready(function () {
                         outsideClickHandler = null;
                     }
                 }
-                showError(`Esta cartinha só poderá ser aberta em ${releaseDate.toLocaleDateString()}`);
+                showError(`Esta cartinha só poderá ser aberta em ${releaseDate.getDate()}/04/${releaseDate.getFullYear()}`);
             } else {
                 this.classList.toggle('open');
                 text.innerText = this.classList.contains('open')
@@ -219,10 +218,12 @@ $(document).ready(function () {
 
         if (isSpecialDay && !(today < releaseDate)) {
             const heartButton = coverDiv.querySelector('.heart-button');
-            heartButton.addEventListener('click', function (e) {
-                e.stopPropagation();
-                text.innerText = text.dataset.message; // Mostra a mensagem especial
-            });
+            if (heartButton) {
+                heartButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    text.innerText = text.dataset.message; // Mostra a mensagem especial
+                });
+            }
         }
 
         bookDiv.appendChild(text);

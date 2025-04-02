@@ -1,3 +1,68 @@
+const mensagens = [
+    //1
+    "Oi minha princesa, este mini projetinho é para o mês mais especial do ano, o mês em que comemoramos 1 ano de namoro, nessa primeira cartinha não irei me estender muito apenas para te deixar na curiosidade. Espero que a senhorita não roube e veja no códido todas as mensagens de uma vez. Eu te amo muito e espero que a declaração diária durante este mês te deixe feliz.💜",
+    //2
+    "Meu amor, hoje quero te dizer o quanto você ilumina meus dias. Desde que você entrou na minha vida, tudo ganhou mais cor, mais significado. Seu sorriso é meu conforto, seu abraço é meu refúgio, e seu amor é a força que me move.Você não imagina o bem que me faz só por existir. Sua voz acalma meus medos, sua risada contagia minha alma, e sua presença transforma até os dias mais cinzas em algo especial. É como se o universo tivesse me dado um presente que eu nem sabia que precisava, mas que agora não consigo mais viver sem. Eu te amo não só pelo que você é, mas pelo que eu me torno quando estou com você.",
+    //3
+    "Que o dia 3 seja incrível! 🌟",
+    //4
+    "Que o dia 4 seja incrível! 🌟",
+    //5
+    "Que o dia 5 seja incrível! 🌟",
+    //6
+    "Que o dia 6 seja incrível! 🌟",
+    //7
+    "Que o dia 7 seja incrível! 🌟",
+    //8
+    "Que o dia 8 seja incrível! 🌟",
+    //9
+    "Que o dia 9 seja incrível! 🌟",
+    //10
+    "Que o dia 10 seja incrível! 🌟",
+    //11
+    "Que o dia 11 seja incrível! 🌟",
+    //12
+    "Que o dia 12 seja incrível! 🌟",
+    //13
+    "Que o dia 13 seja incrível! 🌟",
+    //14
+    "Que o dia 14 seja incrível! 🌟",
+    //15
+    "Que o dia 15 seja incrível! 🌟",
+    //16
+    "Que o dia 16 seja incrível! 🌟",
+    //17
+    "Que o dia 17 seja incrível! 🌟",
+    //18
+    "Que o dia 18 seja incrível! 🌟",
+    //19
+    "Que o dia 19 seja incrível! 🌟",
+    //20
+    "Que o dia 20 seja incrível! 🌟",
+    //21
+    "Que o dia 21 seja incrível! 🌟",
+    //22
+    "Que o dia 22 seja incrível! 🌟",
+    //23
+    "Que o dia 23 seja incrível! 🌟",
+    //24
+    "Que o dia 24 seja incrível! 🌟",
+    //25
+    "Que o dia 25 seja incrível! 🌟",
+    //26
+    "Que o dia 26 seja incrível! 🌟",
+    //27
+    "Que o dia 27 seja incrível! 🌟",
+    //28
+    "Que o dia 28 seja incrível! 🌟",
+    //29
+    "Que o dia 29 seja incrível! 🌟",
+    //30
+    "Última mensagem para o dia 30! 🎉"
+];
+
+mensagens[26] = "❤️ Mensagem SUPER especial para o dia 27/04! ❤️";
+
 // Variável para controlar o evento de clique fora
 let outsideClickHandler = null;
 
@@ -46,19 +111,6 @@ function showError(message) {
         }
     }, 5000);
 }
-
-const mensagens = [
-    "Oi minha princesa, este mini projetinho é para o mês mais especial do ano, o mês em que comemoramos 1 ano de namoro, nessa primeira cartinha não irei me estender muito apenas para te deixar na curiosidade. Espero que a senhorita não roube e veja no códido todas as mensagens de uma vez. Eu te amo muito e espero que a declaração diária durante este mês te deixe feliz.",
-    "Surpresa do dia 2! ✨",
-    "Que o dia 3 seja incrível! 🌟",
-    // Continue até a mensagem 30...
-    "Mensagem especial para o dia 27! 💖",  // Esta será substituída para o card especial
-    // Continue até...
-    "Última mensagem para o dia 30! 🎉"
-];
-
-mensagens[26] = "❤️ Mensagem SUPER especial para o dia 27/04! ❤️";
-
 
 
 

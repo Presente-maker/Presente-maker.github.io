@@ -70,6 +70,8 @@ const musicas = [
     "music/musica2.mp3",
     //3
     "music/musica3.mp3",
+    "music/musica4.mp3",
+
     // ... continue para todas as 30 cartas
     //30
     "music/musica30.mp3"

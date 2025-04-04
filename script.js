@@ -6,7 +6,7 @@ const mensagens = [
     //3
     "Minha princesa, hoje quero te dizer que ter você é o maior presente que a vida me deu. Cada instante ao seu lado é como uma página de um conto perfeito, e o melhor é pensar que essa história está só começando. Eu amo o jeito que você me olha, como se eu fosse seu mundo inteiro. Amo nossos planos bobos, nossos sonhos e até os silêncios que a gente compartilha, porque tudo com você faz sentido. Quero acordar com você todos os dias, ver seu sorriso antes mesmo do café, construir uma vida cheia de memórias e conquistas juntos. Quero envelhecer ao seu lado e, mesmo daqui a 50 anos, ainda te olhar com o mesmo amor e admiração de hoje. Eu te amo hoje, amanhã e em todos os capítulos que ainda vamos escrever. ",
     //4
-    "Que o dia 4 seja incrível! 🌟",
+    "Acordar e lembrar que você é minha namorada é como ganhar um presente novo todo dia. Você sabe aquela sensação de tomar um leite quente numa manhã/dia frio? É assim que meu coração fica quando penso em você. Eu amo os detalhes que fazem a gente ser a gente, o jeito que você me manda dorme bem mesmo quando tá com sono, nossas conversas sem pé nem cabeça até o meio da madrugada, como seu abraço parece ajustar perfeitamente no meu. Mas o que mais me derrete é saber que, não importa o dia que eu tiver, sempre vou ter você do meu lado, a minha torcedora favorita, minha parceira de aventuras e minha cúmplice em tudo. Hoje só queria mesmo dizer: obrigado por existir do jeito que você existe. Meu mundo é infinitamente melhor com você nele. Te amo mais que ontem, mas menos que amanhã.☺💜",
     //5
     "Que o dia 5 seja incrível! 🌟",
     //6

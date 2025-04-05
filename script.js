@@ -8,7 +8,7 @@ const mensagens = [
     //4
     "Acordar e lembrar que você é minha namorada é como ganhar um presente novo todo dia. Você sabe aquela sensação de tomar um leite quente numa manhã/dia frio? É assim que meu coração fica quando penso em você. Eu amo os detalhes que fazem a gente ser a gente, o jeito que você me manda dorme bem mesmo quando tá com sono, nossas conversas sem pé nem cabeça até o meio da madrugada, como seu abraço parece ajustar perfeitamente no meu. Mas o que mais me derrete é saber que, não importa o dia que eu tiver, sempre vou ter você do meu lado, a minha torcedora favorita, minha parceira de aventuras e minha cúmplice em tudo. Hoje só queria mesmo dizer: obrigado por existir do jeito que você existe. Meu mundo é infinitamente melhor com você nele. Te amo mais que ontem, mas menos que amanhã.☺💜",
     //5
-    "Que o dia 5 seja incrível! 🌟",
+    "Meu amor, não existe sensação no mundo que se compare à de ficar acordado te observando dormir. Quando a noite cai e a gente se enrola nos cobertores, eu me permito um luxo que só você me dá que é a de fazer carinho no seu cabelo devagar, sentir sua respiração ficando calma, e assistir seus olhos pesarem até você fugir pro mundo dos sonhos (com direito a musicas de ninar). É como se, naqueles minutos, o tempo parasse só pra gente.  E quando o sol nasce meu coração dispara, acordar e olhar pro lado, ainda com sono, e te ver ali, toda linda amassadinha do sono me lembra que o universo me deu um presente que eu nem merecia. As vezes fico uns minutinhos só te admirando, pensando 'Como alguém pode ser tão perfeita?'. Você não faz ideia do poder que tem de transformar uma simples noite de sono num momento mágico. Eu poderia passar mil vidas repetindo isso e nunca cansaria. Obrigado por ser meu aconchego e meu melhor 'bom dia' (todos os dias remotamente e alguns dias pessoalmente). Eu te amo muitão (Caso queira saber sobre a musica mande mensagem ao SAC)",
     //6
     "Que o dia 6 seja incrível! 🌟",
     //7
@@ -64,17 +64,35 @@ const mensagens = [
 mensagens[26] = "❤️ Mensagem SUPER especial para o dia 27/04! ❤️";
 
 const musicas = [
-    //1
     "music/musica1.mp3",
-    //2
     "music/musica2.mp3",
-    //3
     "music/musica3.mp3",
     "music/musica4.mp3",
-
-    // ... continue para todas as 30 cartas
-    //30
-    "music/musica30.mp3"
+    "music/musica5.mp3",
+    "music/musica6.mp3",
+    "music/musica7.mp3",
+    "music/musica8.mp3",
+    "music/musica9.mp3",
+    "music/musica10.mp3",
+    "music/musica11.mp3",
+    "music/musica12.mp3",
+    "music/musica13.mp3",
+    "music/musica14.mp3",
+    "music/musica15.mp3",
+    "music/musica16.mp3",
+    "music/musica17.mp3",
+    "music/musica18.mp3",
+    "music/musica19.mp3",
+    "music/musica21.mp3",
+    "music/musica22.mp3",
+    "music/musica23.mp3",
+    "music/musica24.mp3",
+    "music/musica25.mp3",
+    "music/musica26.mp3",
+    "music/musica27.mp3",
+    "music/musica28.mp3",
+    "music/musica29.mp3",
+    "music/musica30.mp3",
 ];
 
 // Variável para controlar o evento de clique fora
@@ -338,4 +356,22 @@ function playMusic(musicPath) {
 // Inicializa o botão como pausado no carregamento
 updateButtonIcon();
 
-
+// Força o navegador a buscar uma nova versão do arquivo
+window.addEventListener('load', function() {
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+    
+    // Limpa o cache quando a página carrega
+    if('caches' in window) {
+      caches.keys().then(function(names) {
+        for(let name of names) {
+          caches.delete(name);
+        }
+      });
+    }
+  });

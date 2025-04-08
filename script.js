@@ -14,7 +14,7 @@ const mensagens = [
     //7
     "Minha princesa, hoje eu quero celebrar uma das coisas que mais amo fazer com você que é transformar nossos sonhos e metas em realidade. Não é só sobre o futuro que a gente planeja, é sobre cada passo, cada detalhe, cada 'e se a gente fizer tal coisa?' que vira um 'vamos'. Tudo é mais especial porque é nosso. Eu amo o brilho no seu olho quando você fala dos nossos planos. A sua mão na minha enquanto a gente lista metas. O jeito que você me puxa pra cima quando eu duvido que algo vai dar certo. Você me ensinou que amor não é só sentir, é construir. E eu não quero ninguém além de você pra ser minha parceira nessa obra sem fim. Porque mesmo nos planos que falham, a gente sempre aprende e no fim, o que importa é estar do seu lado. \nEu te amo meu bem.",
     //8
-    "Que o dia 8 seja incrível! 🌟",
+    "Meu amor, mal posso acreditar que em poucos dias estaremos em Poços de Caldas, celebrando nosso primeiro ano de amor (um pouquinho fora do dia certo). Tô com aquela sensação gostosa de ansiedade de quem vai viver um sonho loguinho. Já imagino a gente andando de mãos dadas pelas ruas de pedra, explorando cada cantinho da cidade. O café da manhã com você toda enroladinha no roupão(esqueci o nome do trem quentinho que você tem). O nosso almoço romântico no dia 27, onde vou te olhar e pensar, igual todas as vezes, 'como eu tive sorte de te encontrar'. E pensar que isso é só o começo. Cada ano, cada viagem, cada momento ao seu lado será um novo capítulo que eu vou amar escrever com você. Obrigado por ser minha companheira de aventuras, meu amor de todos os dias e minha razão para comemorar a vida.",
     //9
     "Que o dia 9 seja incrível! 🌟",
     //10

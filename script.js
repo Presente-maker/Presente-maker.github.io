@@ -18,7 +18,7 @@ const mensagens = [
     //9
     "Minha princesa, confesso que já comecei a quebrar a cabeça (no melhor sentido) pensando no seu presente de 1 ano. Não é só um presente, é um pedacinho do que sinto por você e por isso tem que ser tão especial quanto nosso amor. Já perdi horas pensando em cada detalhe que faça seus olhos brilharem e imaginando sua reação quando você abrir (torcendo pra você não adivinhar antes ou eu te contar). Mas saiba que, mesmo que eu encontre o presente perfeito, ele nunca vai superar o maior presente que já ganhei que foi ter você na minha vida nesse primeiro ano incrível.\nTe amo muito mais do que qualquer presente que eu vá te dar em nosso namoro",
     //10
-    "Que o dia 10 seja incrível! 🌟",
+    "Minha vida, já parou pra pensar como nosso amor é como uma planta especial? No começo era um brotinho frágil, mas hoje vejo como crescemos juntos, regamos com risadas das nossas bobagens, adubamos com paciência nos dias difíceis, podamos com cuidado o que não nos faz bem, criamos nossa própria estufa de amor e cumplicidade, e colhemos momentos que guardo como tesouros (minhas melhores memórias são ao seu lado). E sabe o que eu acho mais bonito? Ainda tem tanta coisa pra florescer na nossa relação. Cada eu te amo seu é como sol na minha vida. Obrigado por ser meu jardim e minha jardineira. \nMal posso esperar para plantar novas memórias em Poços de Caldas!\nEu te amo muito meu bem.",
     //11
     "Que o dia 11 seja incrível! 🌟",
     //12

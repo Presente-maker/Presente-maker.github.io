@@ -20,7 +20,7 @@ const mensagens = [
     //10
     "Minha vida, já parou pra pensar como nosso amor é como uma planta especial? No começo era um brotinho frágil, mas hoje vejo como crescemos juntos, regamos com risadas das nossas bobagens, adubamos com paciência nos dias difíceis, podamos com cuidado o que não nos faz bem, criamos nossa própria estufa de amor e cumplicidade, e colhemos momentos que guardo como tesouros (minhas melhores memórias são ao seu lado). E sabe o que eu acho mais bonito? Ainda tem tanta coisa pra florescer na nossa relação. Cada eu te amo seu é como sol na minha vida. Obrigado por ser meu jardim e minha jardineira. \nMal posso esperar para plantar novas memórias em Poços de Caldas!\nEu te amo muito meu bem.",
     //11
-    "Que o dia 11 seja incrível! 🌟",
+    "Minha vida, hoje quero te dizer o que guardo no lugar mais profundo do meu coração, como diz meu amigo djavan na musica de hoje \n''O que há dentro do meu coração \nEu tenho guardado pra te dar\nE todas as horas que o tempo tem pra me conceder\nSão tuas, até morrer''\nA cada dia descubro como te adoro em tudo, no seu jeito, nas suas manias, no seu olhar em como eu te quero mais que tudo, construir nossa história em qualquer lugar, seja num céu azul ou numa tempestade, prometo ser só seu em todos os versos da nossa canção.\nNão importa onde estejamos, em Poços de Caldas, em Santos, em São Paulo, em casa, ou no fim do mundo contigo, até o lugar mais cinza vira um paraíso. Porque você é minha eterna paisagem favorita, meu agora e meu depois, a grande história que sempre quis viver\nTe amo com um amor que ainda está descobrindo sua própria força",
     //12
     "Que o dia 12 seja incrível! 🌟",
     //13

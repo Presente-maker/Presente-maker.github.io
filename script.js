@@ -52,7 +52,7 @@ const mensagens = [
     //26
     "Hoje é dia 26. O dia em que, sem planejar, sem grandiosidade nem script, a gente simplesmente começou. Não teve joelho no chão, nem fotos pra postar. Só seu sorriso, minha coragem, e um ''então... quer namorar comigo?'' que mudou tudo. Alguns amores nascem em data marcada, com festa e declaração. O nosso nasceu no improviso, no meio de uma conversa qualquer, e foi exatamente por isso que deu certo. Porque o que a gente tem nunca precisou de roteiro. Só precisava da verdade e da sua mão na minha na hora certa. Feliz Dia 26, amor. O dia que não é oficial, mas é nosso e é só o primeiro de muitos. Espero que naquele dia eu não tenha te assustado tanto com essa pergunta, sei que pra você pode ter sido meio antes da hora, mas pra mim eu já tinha a certeza de que era você. Aquilo que o pessoal fala sobre ''quando for a pessoa certa você vai saber'', então, foi exatamente isso que aconteceu quando eu estava com você, sabia que era você desde o primeiro dia. Te amo muitão dona Heloisa Pimentel.",
     //27
-    "Que o dia 27 seja incrível! 🌟",
+    "(Ouça o audio😊)",
     //28
     "Que o dia 28 seja incrível! 🌟",
     //29
@@ -61,7 +61,7 @@ const mensagens = [
     "Última mensagem para o dia 30! 🎉"
 ];
 
-mensagens[26] = "❤️ Mensagem SUPER especial para o dia 27/04! ❤️";
+mensagens[26] = "(Ouça o audio😊)";
 
 const musicas = [
     "music/musica1.mp3",
@@ -90,7 +90,7 @@ const musicas = [
     "music/musica24.mp3",
     "music/musica25.mp3",
     "music/musica26.mp3",
-    "music/musica27.mp3",
+    "music/musica27.MP3",
     "music/musica28.mp3",
     "music/musica29.mp3",
     "music/musica30.mp3",
@@ -103,38 +103,38 @@ function showError(message) {
     const errorPopup = document.getElementById('error-popup');
     const errorMessage = document.getElementById('error-message');
     const errorClose = errorPopup.querySelector('.error__close');
-    
+
     // Remove o handler anterior se existir
     if (outsideClickHandler) {
         document.removeEventListener('click', outsideClickHandler);
     }
-    
+
     errorMessage.textContent = message;
     errorPopup.style.display = 'flex';
-    
+
     // Fechar ao clicar no X
-    errorClose.onclick = function() {
+    errorClose.onclick = function () {
         errorPopup.style.display = 'none';
         if (outsideClickHandler) {
             document.removeEventListener('click', outsideClickHandler);
             outsideClickHandler = null;
         }
     };
-    
+
     // Novo handler para clique fora
-    outsideClickHandler = function(e) {
+    outsideClickHandler = function (e) {
         if (!errorPopup.contains(e.target)) {
             errorPopup.style.display = 'none';
             document.removeEventListener('click', outsideClickHandler);
             outsideClickHandler = null;
         }
     };
-    
+
     // Adiciona o event listener após um pequeno delay
     setTimeout(() => {
         document.addEventListener('click', outsideClickHandler);
     }, 10);
-    
+
     // Fechar automaticamente após 5 segundos
     setTimeout(() => {
         errorPopup.style.display = 'none';
@@ -145,7 +145,7 @@ function showError(message) {
     }, 5000);
 }
 
-
+let balloonInterval;
 
 $(document).ready(function () {
     // Primeiro, carregue todas as imagens e depois inicialize o slider
@@ -246,9 +246,19 @@ $(document).ready(function () {
                 text.innerText = this.classList.contains('open')
                     ? text.dataset.message
                     : `Cartinha ${i}`;
-                    if (this.classList.contains('open')) {
-                        playMusic(musicas[i - 1]);
+                if (this.classList.contains('open')) {
+                    playMusic(musicas[i - 1]);
+                    if (i === 27) {
+                        if (balloonInterval) clearInterval(balloonInterval);
+                        balloonInterval = createBalloons();
                     }
+                } else {
+                    if (i === 27 && balloonInterval) {
+                        clearInterval(balloonInterval);
+                        const balloons = document.querySelectorAll('.balloon');
+                        balloons.forEach(balloon => balloon.remove());
+                    }
+                }
             }
         });
 
@@ -259,6 +269,10 @@ $(document).ready(function () {
                     e.stopPropagation();
                     text.innerText = text.dataset.message;
                     playMusic(musicas[i - 1]); // Toca a música especial
+                    if (i === 27) { // Adicione esta condição
+                        if (balloonInterval) clearInterval(balloonInterval);
+                        balloonInterval = createBalloons();
+                    }
                 });
             }
         }
@@ -292,7 +306,7 @@ function playMusic(musicPath) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
     }
-    
+
     // Toca a nova música
     currentAudio = new Audio(musicPath);
     currentAudio.volume = 0.05; // 30% do volume (ajuste este valor entre 0 e 1)
@@ -317,7 +331,7 @@ function updateButtonIcon() {
 }
 
 // Evento de clique no botão
-pausePlayBtn.addEventListener('click', function() {
+pausePlayBtn.addEventListener('click', function () {
     if (currentAudio) {
         if (isMusicPlaying) {
             currentAudio.pause();
@@ -337,19 +351,19 @@ function playMusic(musicPath) {
     currentAudio = new Audio(musicPath);
     currentAudio.volume = 0.3; // Volume padrão
     currentAudio.play().catch(e => console.log("Erro ao tocar música:", e));
-    
+
     // Atualiza o botão quando a música começa
-    currentAudio.onplay = function() {
+    currentAudio.onplay = function () {
         updateButtonIcon();
     };
-    
+
     // Atualiza o botão quando a música termina
-    currentAudio.onended = function() {
+    currentAudio.onended = function () {
         updateButtonIcon();
     };
-    
+
     // Atualiza o botão se ocorrer um erro
-    currentAudio.onerror = function() {
+    currentAudio.onerror = function () {
         updateButtonIcon();
     };
 }
@@ -358,21 +372,69 @@ function playMusic(musicPath) {
 updateButtonIcon();
 
 // Força o navegador a buscar uma nova versão do arquivo
-window.addEventListener('load', function() {
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        for(let registration of registrations) {
-          registration.unregister();
-        }
-      });
+window.addEventListener('load', function () {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+            for (let registration of registrations) {
+                registration.unregister();
+            }
+        });
     }
-    
+
     // Limpa o cache quando a página carrega
-    if('caches' in window) {
-      caches.keys().then(function(names) {
-        for(let name of names) {
-          caches.delete(name);
-        }
-      });
+    if ('caches' in window) {
+        caches.keys().then(function (names) {
+            for (let name of names) {
+                caches.delete(name);
+            }
+        });
     }
-  });
+});
+
+function createBalloons() {
+    const colors = [
+        ['#ff6b6b', '#ffb347'],
+        ['#ff8e8e', '#7ed6df'],
+        ['#e056fd', '#686de0'],
+        ['#badc58', '#f9ca24']
+    ];
+    const balloonCount = 20;
+
+    const existingBalloons = document.querySelectorAll('.balloon');
+    existingBalloons.forEach(balloon => balloon.remove());
+
+    for (let i = 0; i < balloonCount; i++) {
+        setTimeout(() => {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+
+            const leftPos = 10 + Math.random() * 80;
+            balloon.style.left = `${leftPos}vw`;
+
+            const size = 40 + Math.random() * 40;
+            balloon.style.width = `${size}px`;
+            balloon.style.height = `${size * 1.25}px`;
+
+            // Escolhe um par de cores aleatórias para fazer o degradê
+            const colorPair = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.background = `radial-gradient(circle at 50% 40%, ${colorPair[0]} 0%, ${colorPair[1]} 100%)`;
+
+            balloon.style.animationDelay = `${Math.random() * 3}s`;
+            balloon.style.animationDuration = `${10 + Math.random() * 10}s`;
+
+            document.body.appendChild(balloon);
+        }, i * 300);
+    }
+
+    const balloonInterval = setInterval(() => {
+        if (document.querySelector('.book.special-day .cover.open')) {
+            createBalloons();
+        } else {
+            clearInterval(balloonInterval);
+            const balloons = document.querySelectorAll('.balloon');
+            balloons.forEach(balloon => balloon.remove());
+        }
+    }, 20000);
+
+    return balloonInterval;
+}

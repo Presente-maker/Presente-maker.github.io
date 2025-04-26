@@ -393,11 +393,12 @@ window.addEventListener('load', function () {
 
 function createBalloons() {
     const colors = [
-        ['#ff6b6b', '#ffb347'],
-        ['#ff8e8e', '#7ed6df'],
-        ['#e056fd', '#686de0'],
-        ['#badc58', '#f9ca24']
+        ['#ed0c0c', '#9c0606'], // Vermelho (claro para escuro)
+        ['#99ccff', '#0047ab'], // Azul (claro para escuro)
+        ['#28c912', '#178c07'],
+        ['#fff3b0', '#e6ac00']  // Amarelo (claro para escuro)
     ];
+      
     const balloonCount = 20;
 
     const existingBalloons = document.querySelectorAll('.balloon');
@@ -434,7 +435,7 @@ function createBalloons() {
             const balloons = document.querySelectorAll('.balloon');
             balloons.forEach(balloon => balloon.remove());
         }
-    }, 20000);
+    }, 15000);
 
     return balloonInterval;
 }

@@ -381,36 +381,47 @@ body {
         height: 80px;
         background: radial-gradient(circle at 50% 40%, #ff9a9e 0%, #fad0c4 100%);
         border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
-        opacity: 0.8;
+        opacity: 0.9;
         z-index: 9998;
         animation: float-up 12s ease-in infinite;
-        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        filter: drop-shadow(0 5px 8px rgba(0,0,0,0.2));
         will-change: transform;
         pointer-events: none;
+        box-shadow:
+            inset -8px -8px 15px rgba(255,255,255,0.6), /* brilho interno */
+            inset 8px 8px 15px rgba(0,0,0,0.05);       /* sombra interna leve */
+        transform: rotate(-2deg);
     }
     
-    .balloon::before {
+    /* Cordão do balão */
+    .balloon::after {
         content: "";
         position: absolute;
-        bottom: -30px;
+        bottom: -40px;
         left: 50%;
         width: 2px;
-        height: 60px;
-        background: rgba(0,0,0,0.2);
+        height: 40px;
+        background: rgba(0, 0, 0, 0.2);
         transform: translateX(-50%);
     }
     
-    
+    /* Animação de subida com leve zigue-zague */
     @keyframes float-up {
         0% {
             transform: translateX(0) translateY(0) rotate(0deg);
-            opacity: 0.8;
+            opacity: 1;
+        }
+        25% {
+            transform: translateX(10px) translateY(-25vh) rotate(5deg);
         }
         50% {
-            transform: translateX(20px) translateY(-50vh) rotate(180deg);
+            transform: translateX(-10px) translateY(-50vh) rotate(-5deg);
+        }
+        75% {
+            transform: translateX(10px) translateY(-75vh) rotate(5deg);
         }
         100% {
-            transform: translateX(-20px) translateY(-150vh) rotate(360deg);
+            transform: translateX(0) translateY(-100vh) rotate(0deg);
             opacity: 0;
         }
     }

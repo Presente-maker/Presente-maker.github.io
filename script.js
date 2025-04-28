@@ -54,7 +54,7 @@ const mensagens = [
     //27
     "(Ouça o audio😊)",
     //28
-    "Que o dia 28 seja incrível! 🌟",
+    "E hoje, 28, a gente já sabe o melhor ainda está por vir, em três dias, Poços de Caldas nos espera, com suas ruas de pedra, seus cafés da tarde e mil motivos pra gente se perder e se encontrar de novo. Até lá, amor, vou guardar o gosto do almoço de ontem, o brilho nos seus olhos quando comeu o peixe desmanchando, e aquele jeito que só você tem de fazer até os momentos mais simples parecerem mágica(Aquela cochilada magnifica que tiramos pós almoço) Obrigado pelo nosso primeiro ano. Pelos nossos ''só nós dois''. E por todos os dias que ainda vamos construir.",
     //29
     "Que o dia 29 seja incrível! 🌟",
     //30

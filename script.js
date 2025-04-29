@@ -56,7 +56,7 @@ const mensagens = [
     //28
     "E hoje, 28, a gente já sabe o melhor ainda está por vir, em três dias, Poços de Caldas nos espera, com suas ruas de pedra, seus cafés da tarde e mil motivos pra gente se perder e se encontrar de novo. Até lá, amor, vou guardar o gosto do almoço de ontem, o brilho nos seus olhos quando comeu o peixe desmanchando, e aquele jeito que só você tem de fazer até os momentos mais simples parecerem mágica(Aquela cochilada magnifica que tiramos pós almoço) Obrigado pelo nosso primeiro ano. Pelos nossos ''só nós dois''. E por todos os dias que ainda vamos construir.",
     //29
-    "Que o dia 29 seja incrível! 🌟",
+    "Dia 26: a gente começou. Dia 27: celebramos com um almoço só nosso em Fama. Dia 28: ainda sorrindo com a soneca que tiramos. E dia 29 é o dia daquela ansiedade gostosa, a que faz a gente checar o AirBnb de Poços toda hora, reorganizar as possíveis roupas na mente pela terceira vez, e contar os minutos como se fossem horas. Mas sabe o que mais esse dia 29 tem? A certeza de que amanhã, vai ser mais um daqueles capítulos de ansiedade, pós prova, arrumando mala e pensando o que não pode faltar na viagem. Então hoje, meu amor, enquanto a gente espera o dia 1 chegar, eu só queria dizer obrigado por fazer até a espera ser especial. Porque com você, até a contagem regressiva vira memória.",
     //30
     "Última mensagem para o dia 30! 🎉"
 ];
